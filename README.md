@@ -3,6 +3,7 @@
 preparations
 
 install node.js
+
 install create-react-app by running the following command inside your project folder:
 ````
 npx create-react-app . 
