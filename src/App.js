@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/layout/Header'
 import './App.css';
 import Todos from './components/Todos'
+import AddToDo from './components/AddToDo'
 import { render } from '@testing-library/react';
 
 class App extends Component {
@@ -39,12 +40,24 @@ class App extends Component {
       })
   }
 
+  addToDo = (title) => {
+    const newToDo = {
+      id: 4,
+      title: title,
+      completed: false
+    }
+    this.setState({ todos: [...this.state.todos, newToDo] });
+  }
+
   render() {
     console.log(this.state.todos)
     return (
       <div className="App">
-        <Header />
-        <Todos todos={this.state.todos} markComplete={this.markComplete} deleteToDo={this.deleteToDo}/>
+        <div className="container">
+          <Header />
+          <AddToDo addToDo={this.addToDo}/>
+          <Todos todos={this.state.todos} markComplete={this.markComplete} deleteToDo={this.deleteToDo}/>
+        </div>
       </div>
     );
   } 
