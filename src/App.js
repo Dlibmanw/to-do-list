@@ -2,31 +2,21 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/Header'
 import './App.css';
+import axios from 'axios';
 import Todos from './components/Todos'
 import AddToDo from './components/AddToDo'
 import About from './components/pages/About'
 import { render } from '@testing-library/react';
-import uuid from 'uuid';
+// import uuid from 'uuid'; (no longer needed after getting 'todos' from Jsonplaceholder)
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id: uuid.v4(),
-      title: 'Call my parents',
-      completed: false
-      },
-      {
-        id: uuid.v4(),
-      title: 'Dinner with Viviana',
-      completed: false
-      },
-      {
-        id: uuid.v4(),
-      title: 'Buy coffee',
-      completed: false
-      }
-    ]
+    todos: []
+  }
+
+  componentDidMount(){
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+    .then(res => this.setState({ todos: res.data}))
   }
 
   markComplete = (id) => {
@@ -44,12 +34,11 @@ class App extends Component {
   }
 
   addToDo = (title) => {
-    const newToDo = {
-      id: uuid.v4(),
-      title: title,
+    axios.post('https://jsonplaceholder.typicode.com/todos?_limit=10', {
+      title: title, 
       completed: false
-    }
-    this.setState({ todos: [...this.state.todos, newToDo] });
+    })
+    .then(res => this.setState({ todos: [...this.state.todos, res.data] }))
   }
 
   render() {

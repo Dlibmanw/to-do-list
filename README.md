@@ -12,13 +12,17 @@ to run the server run
 ```
 npm start
 ```
-install a random id generator:
+install a random id generator by running the following command:
 ```
 npm install uui
 ```
 install react router by running the following command:
 ```
 npm install react-router-dom
+```
+install Axios by running the following command:
+```
+npm install axios
 ```
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
