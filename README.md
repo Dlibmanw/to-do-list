@@ -20,10 +20,13 @@ install react router by running the following command:
 ```
 npm install react-router-dom
 ```
+<<<<<<< HEAD
 install Axios by running the following command:
 ```
 npm install axios
 ```
+=======
+>>>>>>> 0381df8973a5aec051cbc0193f758fb9c8e480e0
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
