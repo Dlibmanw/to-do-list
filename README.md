@@ -16,6 +16,10 @@ install a random id generator:
 ```
 npm install uui
 ```
+install react router by running the following command:
+```
+npm install react-router-dom
+```
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
