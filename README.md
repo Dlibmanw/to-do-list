@@ -12,6 +12,10 @@ to run the server run
 ```
 npm start
 ```
+install a random id generator:
+```
+npm install uui
+```
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

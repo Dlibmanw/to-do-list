@@ -4,22 +4,23 @@ import './App.css';
 import Todos from './components/Todos'
 import AddToDo from './components/AddToDo'
 import { render } from '@testing-library/react';
+import uuid from 'uuid';
 
 class App extends Component {
   state = {
     todos: [
       {
-        id: 1,
+        id: uuid.v4(),
       title: 'Call my parents',
       completed: false
       },
       {
-        id: 2,
+        id: uuid.v4(),
       title: 'Dinner with Viviana',
       completed: false
       },
       {
-        id: 3,
+        id: uuid.v4(),
       title: 'Buy coffee',
       completed: false
       }
@@ -42,7 +43,7 @@ class App extends Component {
 
   addToDo = (title) => {
     const newToDo = {
-      id: 4,
+      id: uuid.v4(),
       title: title,
       completed: false
     }
