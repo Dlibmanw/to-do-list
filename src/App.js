@@ -29,16 +29,16 @@ class App extends Component {
   }
 
   deleteToDo = (id) => {
-      this.setState({ todos: this.state.todos.filter(todo => todo.id !== id)
-      })
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    .then(res => this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)]
+    }))
   }
-
   addToDo = (title) => {
-    axios.post('https://jsonplaceholder.typicode.com/todos?_limit=10', {
-      title: title, 
+    axios.post('https://jsonplaceholder.typicode.com/todos', {
+      title, 
       completed: false
     })
-    .then(res => this.setState({ todos: [...this.state.todos, res.data] }))
+      .then(res => this.setState({ todos: [...this.state.todos, res.data] }));
   }
 
   render() {
